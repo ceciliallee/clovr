@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+     background: rgb(255,255,255);
+     background: rgb(255,255,255);
+     background: -moz-linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
+     background: -webkit-linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
+     background: linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d0ffd9",GradientType=1); 
+}
