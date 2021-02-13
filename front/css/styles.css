@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    padding: 0;
+    height: 100vh;
     font-family: 'Montserrat', sans-serif;
      background: rgb(255,255,255);
      background: rgb(255,255,255);
@@ -7,4 +9,110 @@ body {
      background: -webkit-linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
      background: linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d0ffd9",GradientType=1); 
+}
+
+/* Navbar Styles */
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > a > img, #logo {
+    height: 30px;
+    width: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+nav a:hover {
+    color: #5fa761;
+    transition: 1s;
+}
+
+#hamburger {
+    display: none;
+}
+
+#overlay {
+    display: none;
+}
+
+/* Navigation Mobile Styles */
+
+@media (max-width: 767px) {
+    nav {
+        padding: 0 20px;
+    }
+
+    nav ul {
+        display: none;
+        max-width: 40vw;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    nav ul.active {
+        display: block;
+    }
+
+    nav ul li {
+        padding: 20px;
+    }
+
+    #hamburger {
+        display: block;
+        height: 30px;
+        width: auto;
+    }
+
+    #overlay {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        opacity: 0.5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom:0;
+        right: 0;
+        z-index: 0;
+    }
+
+    #overlay.active {
+        display: block;
+    }
+}
+
+/* Navigation Desktop Styles */
+
+@media (min-width: 768px) {
+    nav {
+        padding: 0 40px;
+    }
+    nav ul {
+        display: flex;
+        max-width: 500px;
+        width: 100%;
+        justify-content: space-between;
+    }
 }
