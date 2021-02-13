@@ -9,8 +9,6 @@ body {
      background: linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d0ffd9",GradientType=1); 
      overflow-x: hidden;
-     filter: blur(4px);
-     transition: filter 0.7s ease-out;
 }
 
 @keyframes smooth {
@@ -156,16 +154,28 @@ nav a:hover {
     }
 }
 
-/* Home Page Content */
+/* Page Content */
 
-.content {
+.content, .content-1 {
     display: flex;
     padding: 0 100px;
+    
+}
+
+.content {
     flex-direction: row;
     align-items: center;
     margin:auto;
     justify-content: space-between;
     margin-top:20vh;
+}
+
+.content-1 {
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 10vh;
 }
 
 .text-content {
@@ -174,6 +184,12 @@ nav a:hover {
 
 .graphic {
     width: 330px;
+}
+
+.questionnaire-text {
+    width: 70%;
+    margin: auto;
+    margin-top:5vh;
 }
 
 p {
@@ -252,6 +268,8 @@ h1 {
     color: white;
   }
 
+  
+
   .footer {
     animation: smooth 40s infinite;
     color: white;
@@ -261,6 +279,6 @@ h1 {
     margin-top: 20px;
   }
   
-  .footer a {
+  .footer a, .footer p {
     color: white;
   }

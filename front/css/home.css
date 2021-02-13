@@ -1,3 +1,5 @@
 body {
     height: 100vh !important;
+    filter: blur(4px);
+    transition: filter 0.7s ease-out;
 }
