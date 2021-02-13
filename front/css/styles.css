@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     font-family: 'Montserrat', sans-serif;
      background: rgb(255,255,255);
      background: rgb(255,255,255);
@@ -9,7 +8,47 @@ body {
      background: -webkit-linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
      background: linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(208,255,217,1) 100%);
      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d0ffd9",GradientType=1); 
+     overflow-x: hidden;
+     filter: blur(4px);
+     transition: filter 0.7s ease-out;
 }
+
+@keyframes smooth {
+    0% {
+      background: #526991;
+    }
+  
+    25% {
+      background: #88bdbc;
+    }
+  
+    50% {
+      background: #6577bd;
+    }
+  
+    75% {
+      background: #8d63b4;
+    }
+  
+    100% {
+      background: #526991;
+    }
+  }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .loaded {
+    filter: blur(0px) !important;
+  }
+  
 
 /* Navbar Styles */
 
@@ -54,7 +93,7 @@ nav a:hover {
 
 @media (max-width: 767px) {
     nav {
-        padding: 0 20px;
+        padding: 0 100px;
     }
 
     nav ul {
@@ -107,12 +146,121 @@ nav a:hover {
 
 @media (min-width: 768px) {
     nav {
-        padding: 0 40px;
+        padding: 0 100px;
     }
     nav ul {
         display: flex;
-        max-width: 500px;
+        max-width: 400px;
         width: 100%;
         justify-content: space-between;
     }
 }
+
+/* Home Page Content */
+
+.content {
+    display: flex;
+    padding: 0 100px;
+    flex-direction: row;
+    align-items: center;
+    margin:auto;
+    justify-content: space-between;
+    margin-top:20vh;
+}
+
+.text-content {
+    width: 50%;
+}
+
+.graphic {
+    width: 330px;
+}
+
+p {
+    color: #707070;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+/* Button */
+
+.button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 2px solid #355836;
+    border-radius: 2px;
+    margin: 20px 20px 20px 20px;
+    color:#355836;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+  }
+  
+  .button a {
+    text-decoration: none;
+    color: #355836
+  }
+  
+  #button-3 {
+    /* initially hides the effect */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #button-3 a {
+    /* implements the soothing ease effect */
+    position: relative;
+    transition: all 0.45s ease-Out;
+  }
+  
+  #circle {
+    /* this is what expands in the buttom for the effect */
+    width: 0%; /* initially "hidden", or at width and height of 0 */
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #355836;
+    position: absolute;
+    transition: all 0.5s ease-Out;
+    top: 20px;
+    left: 70px;
+  }
+  
+  #button-3:hover #circle {
+    /* the circle expands on hover */
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+  }
+  
+  #button-3:hover a {
+    color: white;
+  }
+
+  .footer {
+    animation: smooth 40s infinite;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    margin-top: 20px;
+  }
+  
+  .footer a {
+    color: white;
+  }

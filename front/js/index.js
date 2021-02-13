@@ -1,3 +1,10 @@
+// Load in animation
+document.addEventListener("DOMContentLoaded", function () {
+    var header = document.getElementById("body");
+    header.classList.add("loaded");
+  });
+
+
 /* Navbar */
 
 // get the hamburger element
@@ -24,3 +31,4 @@ menu.addEventListener("click", toggleMenu);
 
 // exuecute toggle function from overlay on click
 overlay.addEventListener("click", toggleMenu);
+
