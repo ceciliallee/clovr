@@ -10,7 +10,7 @@
       type="image/svg" 
       href="assets/logobg.svg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"> 
-    <title>clovr</title>
+    <title>clovr - questionnaire</title>
 </head>
 <body>
     <nav>
@@ -36,20 +36,40 @@
         
       </section>
 
-      <section>
+      <section class="form">
         <form>
-            <label for="fname">First Name</label>
-            <input type="text">
-            <label for="lanme">Last Name</label>
-            <input type="text">
-            <label for="gender">Gender</label>
-            <select name="gender" id="gender">
+          <div class="form-comp">
+            <input required type="text" placeholder="First Name">
+            <input required type="text" placeholder="Last Name">
+          </div>
+            <div class="form-comp">
+              <select required name="gender" id="gender">
+                <option value="" disabled selected hidden>Gender</option>
                 <option value="man">Man</option>
                 <option value="woman">Woman</option>
                 <option value="nonbinary">Non Binary</option>
             </select>
-                
-            <input type="submit" value="Submit">
+            <input required type="email" placeholder="Email (@unc.edu)">
+            </div>
+            <div class="form-comp">
+              <input required type="text" placeholder="Major (CS Major/Minor)">
+              <select required name="interest" id="interest">
+                  <option value="" disabled selected hidden>Interest</option>
+                  <option value="man">Friends/Networking</option>
+                  <option value="woman">Dating</option>
+                  <option value="nonbinary">Both</option>
+              </select>
+            </div>
+            <div class="form-comp">
+              <div class="terms">
+                <input type="checkbox" class="checkbox"/>
+                <p>By submitting this form I agree to the terms and conditions.</p>
+              </div>
+              <div>
+                <input class = "submit-button" type="submit" value="Submit">
+              </div>
+            </div>
+            
         </form>
     </section>
 

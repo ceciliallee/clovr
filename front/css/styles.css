@@ -186,7 +186,7 @@ nav a:hover {
     width: 330px;
 }
 
-.questionnaire-text {
+.questionnaire-text, form {
     width: 70%;
     margin: auto;
     margin-top:5vh;
@@ -282,3 +282,85 @@ h1 {
   .footer a, .footer p {
     color: white;
   }
+
+  form {
+    border-radius: 10px;
+    background-color: #DCF2E4;
+    width: 65%;
+    padding: 50px;
+    -webkit-box-shadow: 2px 3px 9px -5px rgba(122,122,122,0.72);
+    -moz-box-shadow: 2px 3px 9px -5px rgba(122,122,122,0.72);
+    box-shadow: 2px 3px 9px -5px rgba(122,122,122,0.72);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .form {
+    height: 100vh;
+  }
+
+  input {
+    background-color:#DCF2E4;
+    border: 0;
+    border-bottom: 2px solid #355836;
+    width: 300px;
+  }
+
+  input[type=text], input[type=email] {
+    font-family: 'Montserrat', sans-serif;
+    color: #8E8E8E;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  select:required:invalid {
+    color: gray;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: black;
+  }
+
+  .form-comp {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .terms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .terms p {
+    color: #355836;
+  }
+
+  .submit-button {
+    display: inline-flex;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #355836;
+    border-radius: 4px;
+    margin: 20px;
+    color:#355836;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .checkbox {
+    width: 20px !important;
+  }
+
