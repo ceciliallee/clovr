@@ -11,6 +11,10 @@ body {
      overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes smooth {
     0% {
       background: #526991;
@@ -180,21 +184,18 @@ h1 {
   }
   
   #button-3 {
-    /* initially hides the effect */
     position: relative;
     overflow: hidden;
     cursor: pointer;
   }
   
   #button-3 a {
-    /* implements the soothing ease effect */
     position: relative;
     transition: all 0.45s ease-Out;
   }
   
   #circle {
-    /* this is what expands in the buttom for the effect */
-    width: 0%; /* initially "hidden", or at width and height of 0 */
+    width: 0%; 
     height: 0%;
     opacity: 0;
     line-height: 40px;
@@ -207,7 +208,6 @@ h1 {
   }
   
   #button-3:hover #circle {
-    /* the circle expands on hover */
     width: 200%;
     height: 500%;
     opacity: 1;
@@ -244,7 +244,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     height: 450px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
 
@@ -277,7 +277,6 @@ h1 {
 
   option {
     color: #355836;
-    margin-top: 5vh !important;
   }
 
   .form-comp {
@@ -306,7 +305,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
   }
 
-  .button input:hover {
+  input[type=submit]:hover {
     color: white;
   }
 
