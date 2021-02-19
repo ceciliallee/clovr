@@ -87,64 +87,11 @@ nav a:hover {
     display: none;
 }
 
-/* Navigation Mobile Styles */
-
-@media (max-width: 767px) {
-    nav {
-        padding: 0 100px;
-    }
-
-    nav ul {
-        display: none;
-        max-width: 40vw;
-        width: 100%;
-        height: 100vh;
-        background: white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    nav ul.active {
-        display: block;
-    }
-
-    nav ul li {
-        padding: 20px;
-    }
-
-    #hamburger {
-        display: block;
-        height: 30px;
-        width: auto;
-    }
-
-    #overlay {
-        display: none;
-        width: 100vw;
-        height: 100vh;
-        background: black;
-        opacity: 0.5;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom:0;
-        right: 0;
-        z-index: 0;
-    }
-
-    #overlay.active {
-        display: block;
-    }
-}
-
 /* Navigation Desktop Styles */
 
 @media (min-width: 768px) {
     nav {
-        padding: 0 100px;
+        padding: 0 200px;
     }
     nav ul {
         display: flex;
@@ -158,8 +105,8 @@ nav a:hover {
 
 .content, .content-1 {
     display: flex;
-    padding: 0 100px;
-    
+    padding: 0 180px;
+  
 }
 
 .content {
@@ -172,7 +119,7 @@ nav a:hover {
 
 .content-1 {
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     margin: auto;
     text-align: center;
     margin-top: 10vh;
@@ -220,6 +167,10 @@ h1 {
     justify-content: center;
     overflow: hidden;
     margin: auto;
+    
+  }
+
+  .button {
     margin-top: 30px;
   }
   
@@ -268,8 +219,6 @@ h1 {
     color: white;
   }
 
-  
-
   .footer {
     animation: smooth 40s infinite;
     color: white;
@@ -286,7 +235,7 @@ h1 {
   form {
     border-radius: 10px;
     background-color: #DCF2E4;
-    width: 65%;
+    width: 70%;
     padding: 50px;
     -webkit-box-shadow: 2px 3px 9px -5px rgba(122,122,122,0.72);
     -moz-box-shadow: 2px 3px 9px -5px rgba(122,122,122,0.72);
@@ -294,21 +243,22 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  .form {
-    height: 100vh;
+    height: 450px;
+    margin-bottom: 20px;
   }
 
-  input {
+
+  input, #gender, #interest {
     background-color:#DCF2E4;
     border: 0;
     border-bottom: 2px solid #355836;
-    width: 300px;
+    width: 380px;
+    font-size: 13px;
   }
 
-  input[type=text], input[type=email] {
+  input[type=text], input[type=email], #gender, #interest {
     font-family: 'Montserrat', sans-serif;
-    color: #8E8E8E;
+    color: #0d2c0e;
     padding: 10px;
     margin: 10px 0;
   }
@@ -318,13 +268,16 @@ h1 {
   }
 
   select:required:invalid {
-    color: gray;
+    color: #355836 !important;
   }
+  
   option[value=""][disabled] {
     display: none;
   }
+
   option {
-    color: black;
+    color: #355836;
+    margin-top: 5vh !important;
   }
 
   .form-comp {
@@ -336,31 +289,76 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 100px;
   }
 
   .terms p {
     color: #355836;
-  }
-
-  .submit-button {
-    display: inline-flex;
-    height: 30px;
-    width: 150px;
-    border: 2px solid #355836;
-    border-radius: 4px;
-    margin: 20px;
-    color:#355836;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 0.8em;
-    letter-spacing: 1.5px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: auto;
+    font-size: 12px;
   }
 
   .checkbox {
     width: 20px !important;
   }
 
+  .button input {
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .button input:hover {
+    color: white;
+  }
+
+  /* Navigation Mobile Styles */
+
+@media (max-width: 767px) {
+  nav {
+      padding: 0 200px;
+  }
+
+  nav ul {
+      display: none;
+      max-width: 40vw;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+
+  nav ul.active {
+      display: block;
+  }
+
+  nav ul li {
+      padding: 20px;
+  }
+
+  #hamburger {
+      display: block;
+      height: 30px;
+      width: auto;
+  }
+
+  #overlay {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      opacity: 0.5;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom:0;
+      right: 0;
+      z-index: 0;
+  }
+
+  #overlay.active {
+      display: block;
+  }
+}

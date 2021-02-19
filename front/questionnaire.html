@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="js/index.js" defer></script>
+    <script src="js/main.js" defer></script>
     <link rel="icon" 
       type="image/svg" 
       href="assets/logobg.svg">
@@ -36,7 +36,7 @@
         
       </section>
 
-      <section class="form">
+      <section>
         <form>
           <div class="form-comp">
             <input required type="text" placeholder="First Name">
@@ -62,11 +62,13 @@
             </div>
             <div class="form-comp">
               <div class="terms">
-                <input type="checkbox" class="checkbox"/>
+                <input required type="checkbox" class="checkbox"/>
                 <p>By submitting this form I agree to the terms and conditions.</p>
               </div>
               <div>
-                <input class = "submit-button" type="submit" value="Submit">
+                <div class="button" id="button-3">
+                  <div id="circle"></div>
+                  <input type="submit" value="SUBMIT">
               </div>
             </div>
             

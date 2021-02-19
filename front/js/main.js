@@ -1,3 +1,5 @@
+
+
 // Load in animation
 document.addEventListener("DOMContentLoaded", function () {
     var header = document.getElementById("body");
