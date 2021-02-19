@@ -123,7 +123,6 @@ nav a:hover {
 
 .content-1 {
     flex-direction: column;
-    width: 70%;
     margin: auto;
     text-align: center;
     margin-top: 10vh;
@@ -328,16 +327,55 @@ h1 {
     color: white;
   }
 
-  /* Navigation Mobile Styles */
+  .terms-page {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+  }
 
-@media (max-width: 767px) {
+  .terms-img {
+    width: 200px;
+    margin: auto;
+  }
+
+  .terms-footer {
+    position: absolute;
+    left:-15px;
+    bottom:-20px;
+    width: 105%;
+    z-index: -2;
+  }
+
+  .footer-text {
+    margin: auto;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  #terms {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+
+  /* Mobile Styles */
+
+@media (max-width: 950px) {
+
+  /* Nav */
+
   nav {
-      padding: 0 200px;
+      padding: 0 50px;
   }
 
   nav ul {
       display: none;
-      max-width: 40vw;
+      max-width: 55vw;
       width: 100%;
       height: 100vh;
       background: white;
@@ -379,4 +417,30 @@ h1 {
   #overlay.active {
       display: block;
   }
+
+  .content {
+    flex-direction: column;
+    margin-top: 5vh;
+    padding: 0;
+  }
+
+  .text-content {
+    width: 80%;
+    /* text-align: center; */
+  }
+
+  .content-1 {
+    padding: 0;
+    margin-top: 5vh;
+    width: 80%;
+  }
+
+  .graphic {
+    width: 70vw;
+  }
+
+  .terms-img {
+    width:35vw;
+  }
+
 }
