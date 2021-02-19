@@ -39,31 +39,129 @@
       <section>
         <form>
           <div class="form-comp">
-            <input required type="text" placeholder="First Name">
-            <input required type="text" placeholder="Last Name">
+            <input required name = "first" type="text" placeholder="First Name">
+            <input required name = "last" type="text" placeholder="Last Name">
           </div>
             <div class="form-comp">
-              <select required name="gender" id="gender">
+              <select required name="gender" id="dropdown">
                 <option value="" disabled selected hidden>Gender</option>
                 <option value="man">Man</option>
                 <option value="woman">Woman</option>
                 <option value="nonbinary">Non Binary</option>
             </select>
-            <input required type="email" placeholder="Email (@unc.edu)">
+            <input required name = "email" type="email" placeholder="Email (@unc.edu)">
             </div>
             <div class="form-comp">
-              <input required type="text" placeholder="Major (CS Major/Minor)">
-              <select required name="interest" id="interest">
-                  <option value="" disabled selected hidden>Interest</option>
-                  <option value="man">Friends/Networking</option>
-                  <option value="woman">Dating</option>
-                  <option value="nonbinary">Both</option>
+              <input required name = "major" type="text" placeholder="Major(s) and minor(s)">
+              <select required name="year" id="dropdown">
+                  <option value="" disabled selected hidden>Year</option>
+                  <option value="freshman">Freshman</option>
+                  <option value="sophomore">Sophomore</option>
+                  <option value="junior">Junior</option>
+                  <option value="senior">Senior/Super Senior</option>
               </select>
             </div>
             <div class="form-comp">
+              <input required type="text" placeholder="LinkedIn Profile">
+              <input required type="text" placeholder="Instagram (@)">
+            </div>
+            <p class="interest-title">CS Interests</p>
+
+            <div class="form-comp">
+              <div class="interest-check">
+                <input type="checkbox" value="ai" class="checkbox">
+                <p>Artificial Intelligence (AI)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="arc" class="checkbox">
+                <p>Computer Architecture & Engineering (ARC)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="bio" class="checkbox">
+                <p>Biosystems & Computational Biology (BIO)</p>
+              </div>
+            </div>
+
+            <div class="form-comp">
+              <div class="interest-check">
+                <input type="checkbox" value="cpsda" class="checkbox">
+                <p>Cyber-Physical Systems and Design Automation (CPSDA)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="dbms" class="checkbox">
+                <p>Database Management Systems (DBMS)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="educ" class="checkbox">
+                <p>Education (EDUC)</p>
+              </div>
+            </div>
+
+            <div class="form-comp">
+              <div class="interest-check">
+                <input type="checkbox" value="gr" class="checkbox">
+                <p>Graphics (GR)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="hci" class="checkbox">
+                <p>Human-Computer Interaction (HCI)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="osnt" class="checkbox">
+                <p>Operating Systems & Networking (OSNT)</p>
+              </div>
+            </div>
+
+            <div class="form-comp">
+              <div class="interest-check">
+                <input type="checkbox" value="ps" class="checkbox">
+                <p>Programming Systems (PS)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="sci" class="checkbox">
+                <p>Scientific Computing (SCI)</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="sec" class="checkbox">
+                <p>Security (SEC)</p>
+              </div>
+            </div>
+
+            <p class="interest-title">Other Interests / Hobbies</p>
+            <div class="form-comp">
+              <div class="interest-check">
+                <input type="checkbox" value="art" class="checkbox">
+                <p>Art</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="fitness" class="checkbox">
+                <p>Fitness</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="sports" class="checkbox">
+                <p>Sports</p>
+              </div>
+            </div>
+
+            <div class="form-comp">
+              <div class="interest-check">
+                <input type="checkbox" value="volunteering" class="checkbox">
+                <p>Volunteering</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="animals class="checkbox">
+                <p>Animals</p>
+              </div>
+              <div class="interest-check">
+                <input type="checkbox" value="sports" class="checkbox">
+                <p>Sports</p>
+              </div>
+            </div>
+
+            <div class="form-comp">
               <div class="terms">
                 <input required type="checkbox" class="checkbox"/>
-                <p>By submitting this form I agree to the terms and conditions.</p>
+                <p>By submitting this form I agree to the <a style="text-decoration: none; color: green;"href="terms.html">terms and conditions</a>. I also acknowledge that my social media information may be released to my matches.</p>
               </div>
               <div>
                 <div class="button" id="button-3">

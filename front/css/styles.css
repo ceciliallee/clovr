@@ -243,12 +243,31 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 450px;
+    height: 100%;
     margin-bottom: 40px;
   }
 
+  .interest-check {
+    display: flex;
+    width: 60%;
+    flex-direction:row;
+    align-items:center;
+  }
 
-  input, #gender, #interest {
+  .interest-check p {
+    margin-left: 5px;
+    font-size: 13px;
+    color: #355836;
+  }
+
+  .interest-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #355836;
+  }
+
+
+  input, #dropdown {
     background-color:#DCF2E4;
     border: 0;
     border-bottom: 2px solid #355836;
@@ -256,11 +275,11 @@ h1 {
     font-size: 13px;
   }
 
-  input[type=text], input[type=email], #gender, #interest {
+  input[type=text], input[type=email], #dropdown {
     font-family: 'Montserrat', sans-serif;
     color: #0d2c0e;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 11px;
+    margin: 20px 0;
   }
 
   *, *:before, *:after {
