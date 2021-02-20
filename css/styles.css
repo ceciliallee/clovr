@@ -428,7 +428,6 @@ h1 {
 
   .text-content {
     width: 80%;
-    /* text-align: center; */
   }
 
   .content-1 {
@@ -442,7 +441,37 @@ h1 {
   }
 
   .terms-img {
-    width:35vw;
+    width:20vw;
+  }
+
+  #terms {
+    overflow: unset;
+    height: 130vh;
+  }
+
+  .terms-footer {
+    bottom: -220px;
+  }
+
+  .footer-text {
+    padding-top: 120px;
+    font-size: 12px;
   }
 
 }
+
+
+@media (max-width: 900px) {
+  .footer-text, .terms-footer {
+    display: hidden;
+  }
+  #terms {
+    height: auto;
+    overflow: hidden !important;
+  }
+ 
+}
+
+
+
+
