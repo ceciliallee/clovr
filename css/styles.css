@@ -364,6 +364,37 @@ h1 {
     overflow: hidden;
   }
 
+  .team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .team h1 {
+    font-size: 15px;
+    color: #355836;
+  }
+
+  .team-member {
+    width: 30%;
+    margin-top: 5vh;
+  }
+
+  .linkedin {
+    width: 20px !important;
+    margin-left: 7px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-member img {
+    width: 150px;
+  }
 
   /* Mobile Styles */
 
@@ -458,10 +489,14 @@ h1 {
     font-size: 12px;
   }
 
+  .graphic {
+    width: 400px;
+  }
+
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
   .footer-text, .terms-footer {
     display: hidden;
   }
@@ -469,8 +504,16 @@ h1 {
     height: auto;
     overflow: hidden !important;
   }
+  .team {
+    flex-direction: column;
+  }
+
+  .team-member {
+    width: auto;
+  }
  
 }
+
 
 
 
