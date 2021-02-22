@@ -424,6 +424,7 @@ h1 {
 
   nav ul.active {
       display: block;
+      z-index: 1;
   }
 
   nav ul li {
@@ -452,6 +453,7 @@ h1 {
 
   #overlay.active {
       display: block;
+
   }
 
   .content {
