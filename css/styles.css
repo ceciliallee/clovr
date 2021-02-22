@@ -280,6 +280,15 @@ h1 {
     margin: 20px 0;
   }
 
+  input[type="checkbox"] {
+    width: 20px; /*Desired width*/
+    height: 20px; /*Desired height*/
+    cursor: pointer;
+    /* -webkit-appearance: none;
+    appearance: none; */
+    border-bottom: 0px;
+  }
+
   *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -323,14 +332,6 @@ h1 {
     border: 0;
     font-family: 'Montserrat', sans-serif;
   }
-
-  .submit {
-    border-bottom: 0px ! important;
-  }
-
-  /* input[type=submit]:hover {
-    color: white;
-  } */
 
   .terms-page {
     display: flex;
