@@ -154,7 +154,7 @@ h1 {
 
 /* Button */
 
-.button {
+.button, .submit-button {
     display: inline-flex;
     height: 40px;
     width: 150px;
@@ -170,14 +170,13 @@ h1 {
     justify-content: center;
     overflow: hidden;
     margin: auto;
-    
   }
 
-  .button {
+  .button, .submit-button {
     margin-top: 30px;
   }
   
-  .button a {
+  .button a, .submit-button {
     text-decoration: none;
     color: #355836
   }
@@ -325,9 +324,13 @@ h1 {
     font-family: 'Montserrat', sans-serif;
   }
 
-  input[type=submit]:hover {
-    color: white;
+  .submit {
+    border-bottom: 0px ! important;
   }
+
+  /* input[type=submit]:hover {
+    color: white;
+  } */
 
   .terms-page {
     display: flex;
@@ -490,7 +493,14 @@ h1 {
   }
 
   .graphic {
-    width: 400px;
+    width: 300px;
+  }
+
+  input, #dropdown {
+    width: 250px;
+  }
+  form, .questionnaire-text {
+    width: 80%;
   }
 
 }
@@ -511,7 +521,46 @@ h1 {
   .team-member {
     width: auto;
   }
+
+  input, #dropdown {
+    width: 250px;
+  }
  
+}
+
+@media (max-width: 740px) {
+  .form-comp {
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+  }
+
+  input, #dropdown {
+    width: 275px;
+  }
+
+  .submit-button {
+    width: auto;
+  }
+}
+
+@media (max-width: 570px) {
+  .form-comp {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  input, #dropdown {
+    width: 220px;
+  }
+
+  .submit-button {
+    width: auto;
+  }
+
+  .terms {
+    margin-top: 3vh;
+  }
 }
 
 
