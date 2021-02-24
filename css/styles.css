@@ -281,8 +281,7 @@ h1 {
   }
 
   input[type="checkbox"] {
-    width: 20px; /*Desired width*/
-    height: 20px; /*Desired height*/
+width: 20px;
     cursor: pointer;
     /* -webkit-appearance: none;
     appearance: none; */
@@ -324,9 +323,9 @@ h1 {
     padding-left: 5px;
   }
 
-  .checkbox {
+  /* .checkbox {
     width: 20px !important;
-  }
+  } */
 
   .button input {
     border: 0;
@@ -506,6 +505,10 @@ h1 {
     width: 80%;
   }
 
+  /* input[type="checkbox"] {
+width: unset;
+  } */
+
 }
 
 
@@ -563,6 +566,10 @@ h1 {
 
   .terms {
     margin-top: 3vh;
+  }
+
+  .form-comp p {
+    width: 100%;
   }
 }
 
