@@ -170,6 +170,7 @@ h1 {
     justify-content: center;
     overflow: hidden;
     margin: auto;
+    cursor: pointer;
   }
 
   .button, .submit-button {
@@ -531,6 +532,8 @@ width: unset;
   input, #dropdown {
     width: 250px;
   }
+  
+
  
 }
 
@@ -539,6 +542,14 @@ width: unset;
     flex-direction: column;
     margin: auto;
     width: 100%;
+  }
+
+  .interest-check {
+    width: 100%;
+  }
+
+  .submit-button {
+    width: 100% !important;
   }
 
   input, #dropdown {
