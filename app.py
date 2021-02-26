@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, session, render_template
+from flask import Flask, request, send_file, session, render_template, jsonify
 import os
 import json
 import firebase_admin
@@ -28,7 +28,20 @@ def about():
 @app.route('/formsubmit', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        print(request.form.keys())
+        print(list(request.form.keys()))
+        print(request.form.getlist('csinterest[]'))
+
+        #TODO validation of form before creating vals dictionary
+
+        vals = {}
+        for i in request.form.keys():
+            if '[]' not in i:
+                vals[i] = request.form[i]
+        vals['csinterest'] = request.form.getlist('csinterest[]')
+        vals['hobbies'] = request.form.getlist('hobbies[]')
+        uploadSurveyContent(vals)
+        return 'success?'
+
 
 #Takes in a dictionary for vals
 def uploadSurveyContent(vals):
@@ -36,7 +49,7 @@ def uploadSurveyContent(vals):
     path = '/users/' + user_key
     ref_path = database.reference(path)
     for i in vals:
-        ref_path.child(i).push(vals[i])
+        ref_path.child(i).push(json.dumps(vals[i]))
 
 
 
