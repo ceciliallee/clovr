@@ -4,6 +4,7 @@ import json
 import firebase_admin
 import string
 import random
+import re
 
 app = Flask(__name__)
 app.secret_key = "asdfasfdasfdsafasddfsadfasdfsadfdas"
@@ -12,6 +13,7 @@ base = os.getcwd()
 f_credential = json.loads(os.environ['GOOGLE_APPLICATION_CREDS'])
 f_credentials = firebase_admin.credentials.Certificate(f_credential)
 fb = firebase_admin.initialize_app(f_credentials, {'databaseURL': 'https://clovr-26eba-default-rtdb.firebaseio.com/'})
+regex_email = "^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.](\w+[.]?)\w+$"
 
 from collections import defaultdict
 form = defaultdict(list)
@@ -88,6 +90,9 @@ def validateForm():
                         return -1, "Invalid value for attribute \"" + i + "\": " + request.form[i]
             else:
                 return -1, "Unknown form data: " + i
+
+    if not re.search(regex_email, request.form['email']):
+        return -1, "Invalid email format"
     return 0, "Valid form"
 
 
