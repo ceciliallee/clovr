@@ -41,4 +41,4 @@ def uploadSurveyContent(vals):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True) #debug=True so that caching doesn't occur
