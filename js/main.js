@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     header.classList.add("loaded");
   });
 
-//Testing Commit
+//Testing
 /* Navbar */
 
 // get the hamburger element
