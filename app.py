@@ -77,6 +77,9 @@ def validateForm():
                 for j in form[i]:
                     if j not in request.form.keys():
                         return -1, "Missing attribute: " + j
+                    else:
+                        if len(request.form[j]) == 0:
+                            return -1, "Cannot have empty value for \"" + j + "\" input"
             elif i in request.form.keys() and request.form[i] in form[i]:
                 if i == 'terms':
                     if request.form[i] == "on": continue
