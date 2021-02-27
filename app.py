@@ -50,8 +50,8 @@ def submit():
             for i in request.form.keys():
                 if '[]' not in i:
                     vals[i] = request.form[i]
-            vals['csinterest'] = request.form.getlist('csinterest[]')
-            vals['hobbies'] = request.form.getlist('hobbies[]')
+            vals['csinterest'] = list(set(request.form.getlist('csinterest[]')))
+            vals['hobbies'] = list(set(request.form.getlist('hobbies[]')))
             uploadSurveyContent(vals)
             return 'success?'
         else:
@@ -65,6 +65,7 @@ def uploadSurveyContent(vals):
         value = vals[i]
         key = i
         ref_path.update({key : value})
+    #Meaningless coordinates just for the matching algorithm
     ref_path.update({"coordinates" : {"lat" : "47.599088077746394", "long" : "-122.3339125374332"}})
 
 
