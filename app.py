@@ -65,9 +65,6 @@ def uploadSurveyContent(vals):
         value = vals[i]
         key = i
         ref_path.update({key : value})
-    #Meaningless coordinates just for the matching algorithm
-    ref_path.update({"coordinates" : {"lat" : "47.599088077746394", "long" : "-122.3339125374332"}})
-
 
 def validateForm():
     for i in form.keys():
