@@ -27,6 +27,10 @@ list_items = ["csinterest[]", "hobbies[]"]
 
 from firebase_admin import db as database
 
+current_db_items = {}
+for i in database.reference('/users').get().keys():
+    current_db_items[i] = 1
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -59,8 +63,12 @@ def submit():
 #Takes in a dictionary for vals
 def uploadSurveyContent(vals):
     user_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))
+    #Collision key detection
+    while user_key in current_db_items:
+        user_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))
     path = '/users/' + user_key
     ref_path = database.reference(path)
+    current_db_items[user_key] = 1
     for i in vals:
         value = vals[i]
         key = i
