@@ -42,6 +42,10 @@ def questionnaire():
 def about():
     return render_template('about.html')
 
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
+
 @app.route('/formsubmit', methods=['POST'])
 def submit():
     if request.method == 'POST':
