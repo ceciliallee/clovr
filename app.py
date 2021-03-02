@@ -124,7 +124,7 @@ def uploadSurveyContent(vals):
         ref_path.update({key : value})
     ref_path.update({"emailVerified": "false"})
     msg = Message("Email Verification Required - Clovr", sender=os.environ["EMAIL"], recipients=[vals['email']])
-    msg.body = "Hello " + vals['first'] + " " + vals['last'] + ",\n\n\tWe're excited that you want to participate in this digital social event. Please verify your email using the following link and access code below:\n\n\t\thttp://clovru.herokuapp.com/verify\n\t\tAccess Code: " + user_key + "\n\n\tIf you do not verify your email, you will not receive the Zoom link for the event. Hopefully, we'll see you on March 17th at 7:00pm EST!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
+    msg.body = "Hello " + vals['first'] + " " + vals['last'] + ",\n\n\tWe're excited that you want to participate in this digital social event. Please verify your email using the following link and access code below:\n\n\t\thttp://clovru.herokuapp.com/verify\n\t\tAccess Code: " + user_key + "\n\n\tIf you do not verify your email, you will not receive the Zoom link for the event. We'll see you on March 17th at 7:00pm EST!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
     mail.send(msg)
 
 def validateForm():
