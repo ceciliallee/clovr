@@ -84,8 +84,12 @@ def verifyPage():
         if 'access' not in request.form.keys():
             return render_template('status.html', status="Invalid form data submitted. Make sure you did not alter the HTML of the form.")
         else:
-            global current_db_items
             unique_key = request.form['access']
+
+            if len(unique_key) == 0:
+                return render_template('status.html', status="You did not enter an access code. We can't verify nothing :)")
+
+            global current_db_items
             if unique_key in current_db_items or unique_key in database.reference('/users').get(shallow=True):
                 ref = database.reference('/users/' + unique_key)
                 contents = ref.get()
