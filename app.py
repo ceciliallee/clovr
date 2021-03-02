@@ -91,7 +91,7 @@ def verifyPage():
                 contents = ref.get()
                 if contents['emailVerified'] == 'false':
                     ref.update({"emailVerified": "true"})
-                    msg = Message("Successfully Verified Email - Clovr @ UNC", sender=os.environ["EMAIL"],
+                    msg = Message("Welcome to Clovr @ UNC!", sender=os.environ["EMAIL"],
                                   recipients=[contents['email']])
                     msg.body = "Hello " + contents['first'] + " " + contents[
                         'last'] + ",\n\n\tYou have successfully verified your email and are now confirmed for the event on March 17th at 7:00pm EST. The link to join the event can be found below:\n\n\t\t" + os.environ['ZOOM_LINK'] + "\n\n\tSee you then!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
@@ -123,7 +123,7 @@ def uploadSurveyContent(vals):
             value = value.lower()
         ref_path.update({key : value})
     ref_path.update({"emailVerified": "false"})
-    msg = Message("Welcome to Clovr!", sender=os.environ["EMAIL"], recipients=[vals['email']])
+    msg = Message("Email Verification Required - Clovr", sender=os.environ["EMAIL"], recipients=[vals['email']])
     msg.body = "Hello " + vals['first'] + " " + vals['last'] + ",\n\n\tWe're excited that you want to participate in this digital social event. Please verify your email using the following link and access code below:\n\n\t\thttp://clovru.herokuapp.com/verify\n\t\tAccess Code: " + user_key + "\n\n\tIf you do not verify your email, you will not receive the Zoom link for the event. Hopefully, we'll see you on March 17th at 7:00pm EST!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
     mail.send(msg)
 
