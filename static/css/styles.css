@@ -245,6 +245,9 @@ h1 {
     height: 100%;
     margin-bottom: 40px;
   }
+  .card {
+    height: unset;
+  }
 
   .interest-check {
     display: flex;
