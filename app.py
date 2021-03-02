@@ -73,7 +73,7 @@ def submit():
             vals['csinterest'] = list(set(request.form.getlist('csinterest[]')))
             vals['hobbies'] = list(set(request.form.getlist('hobbies[]')))
             uploadSurveyContent(vals)
-            return render_template('status.html', status='Success!\n\nPlease check your email (might need to check your junk/spam folders as well) to verify your email.\nIf you do not verify your email, you will not be matched with a group on the day of the event.')
+            return render_template('status.html', status='Success!\n\nPlease check your email (might need to check your junk/spam folders as well) to verify your email.\nIf you do not verify your email, you will not be matched with others on the day of the event.')
         else:
             return render_template('status.html', status=message)
 @app.route('/verify', methods=['GET', "POST"])
