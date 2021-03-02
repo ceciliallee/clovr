@@ -6,14 +6,14 @@ body {
 
 .acm {
     display: flex;
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 11px;
     color: #707070;
     align-items: center;
 }
 
 .acm img {
-    width: 45px;
+    width: 40px;
 }
 
 .acm p {
