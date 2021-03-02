@@ -4,6 +4,17 @@ body {
     transition: filter 0.8s ease-out;
 }
 
+.acm {
+    display: flex;
+    margin-top: 5px;
+    font-size: 10px;
+    color: #707070;
+}
+
+.acm img {
+    width: 50px;
+}
+
 @media (max-width: 950px) { 
     body {
         height: 100vh;
