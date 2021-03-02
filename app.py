@@ -78,6 +78,7 @@ def submit():
             return message
 @app.route('/verify/<unique_key>')
 def verify(unique_key):
+    print("UNIQUE KEY: " + unique_key)
     if unique_key in current_db_items:
         database.reference('/users/'+unique_key).update({"emailVerified": "true"})
         return "Successfully verified email! You can now safely close this page."
