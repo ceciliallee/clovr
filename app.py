@@ -80,7 +80,7 @@ def submit():
 def verify(unique_key):
     print("UNIQUE KEY: " + unique_key)
     global current_db_items
-    if unique_key in current_db_items:
+    if unique_key in database.reference('/users').get(shallow=True):
         database.reference('/users/'+unique_key).update({"emailVerified": "true"})
         return "Successfully verified email! You can now safely close this page."
     else:
