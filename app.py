@@ -94,13 +94,13 @@ def verifyPage():
                     msg = Message("Successfully Verified Email - Clovr @ UNC", sender=os.environ["EMAIL"],
                                   recipients=[contents['email']])
                     msg.body = "Hello " + contents['first'] + " " + contents[
-                        'last'] + ",\n\n\tYou have successfully verified your email and are now confirmed for the event on March 17th at 7:00pm EST. See you then!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
+                        'last'] + ",\n\n\tYou have successfully verified your email and are now confirmed for the event on March 17th at 7:00pm EST. The link to join the event can be found below:\n\n\t\t" + os.environ['ZOOM_LINK'] + "\n\n\tSee you then!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
                     mail.send(msg)
                     return render_template('status.html', status="Successfully verified email! You can now safely close this page.")
                 else:
                     return render_template('status.html', status="You have already verified your email. No further actions need to be taken on your part.")
             else:
-                return render_template('status.html', status="No user found to verify. Please make sure you're using the correct link that was emailed to you.")
+                return render_template('status.html', status="No user found to verify with that access code. Please make sure you're using the correct access code that was emailed to you.")
 
 #Takes in a dictionary for vals
 def uploadSurveyContent(vals):
@@ -124,7 +124,7 @@ def uploadSurveyContent(vals):
         ref_path.update({key : value})
     ref_path.update({"emailVerified": "false"})
     msg = Message("Welcome to Clovr!", sender=os.environ["EMAIL"], recipients=[vals['email']])
-    msg.body = "Hello " + vals['first'] + " " + vals['last'] + ",\n\n\tWe're excited that you want to participate in this digital social event. Please verify your email using the following link and access code below:\n\n\t\thttp://clovru.herokuapp.com/verify\n\t\tAccess Code: " + user_key + "\n\n\tSee you on March 17th at 7:00pm EST!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
+    msg.body = "Hello " + vals['first'] + " " + vals['last'] + ",\n\n\tWe're excited that you want to participate in this digital social event. Please verify your email using the following link and access code below:\n\n\t\thttp://clovru.herokuapp.com/verify\n\t\tAccess Code: " + user_key + "\n\n\tIf you do not verify your email, you will not receive the Zoom link for the event. Hopefully, we'll see you on March 17th at 7:00pm EST!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
     mail.send(msg)
 
 def validateForm():
