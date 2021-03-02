@@ -105,7 +105,7 @@ def uploadSurveyContent(vals):
     global current_db_emails
     current_db_items[user_key] = vals['email']
     current_db_emails[vals['email']] = user_key
-    database.reference("/emails").update({vals['email']: user_key})
+    database.reference("/emails").update({str(vals['email']): user_key})
     for i in vals:
         value = vals[i]
         key = i
