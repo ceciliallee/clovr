@@ -136,7 +136,7 @@ nav a:hover {
     width: 330px;
 }
 
-.questionnaire-text, form {
+.questionnaire-text, form, .card {
     width: 70%;
     margin: auto;
     margin-top:5vh;
@@ -231,7 +231,7 @@ h1 {
     color: white;
   }
 
-  form {
+  form, .card {
     border-radius: 10px;
     background-color: #DCF2E4;
     width: 70%;
