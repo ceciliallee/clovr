@@ -73,16 +73,16 @@ def submit():
             vals['csinterest'] = list(set(request.form.getlist('csinterest[]')))
             vals['hobbies'] = list(set(request.form.getlist('hobbies[]')))
             uploadSurveyContent(vals)
-            return 'Success!\n\nPlease check your email (might need to check your junk email as well) to verify your email.\nIf you do not verify your email, you will not get a match on the day of the event.'
+            return render_template('status.html', status='Success!\n\nPlease check your email (might need to check your junk email as well) to verify your email.\nIf you do not verify your email, you will not get a match on the day of the event.')
         else:
-            return message
+            return render_template('status.html', status=message)
 @app.route('/verify', methods=['GET', "POST"])
 def verifyPage():
     if request.method == 'GET':
         return render_template('verify_page.html')
     elif request.method == 'POST':
         if 'access' not in request.form.keys():
-            return "Invalid form data submitted. Make sure you did not alter the HTML of the form."
+            return render_template('status.html', status="Invalid form data submitted. Make sure you did not alter the HTML of the form.")
         else:
             global current_db_items
             unique_key = request.form['access']
@@ -96,11 +96,11 @@ def verifyPage():
                     msg.body = "Hello " + contents['first'] + " " + contents[
                         'last'] + ",\n\n\tYou have successfully verified your email and are now confirmed for the event on March 17th at 7:00pm EST. See you then!\n\nBest,\n  The Clovr Team at UNC-Chapel Hill"
                     mail.send(msg)
-                    return "Successfully verified email! You can now safely close this page."
+                    return render_template('status.html', status="Successfully verified email! You can now safely close this page.")
                 else:
-                    return "You have already verified your email. No further actions need to be taken on your part."
+                    return render_template('status.html', status="You have already verified your email. No further actions need to be taken on your part.")
             else:
-                return "No user found to verify. Please make sure you're using the correct link that was emailed to you."
+                return render_template('status.html', status="No user found to verify. Please make sure you're using the correct link that was emailed to you.")
 
 #Takes in a dictionary for vals
 def uploadSurveyContent(vals):
