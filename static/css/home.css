@@ -7,7 +7,7 @@ body {
 .acm {
     display: flex;
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 11px;
     color: #707070;
     align-items: center;
 }
@@ -22,6 +22,6 @@ body {
 
 @media (max-width: 950px) { 
     body {
-        height: 120vh;
+        height: 110vh;
     }
 }
