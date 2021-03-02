@@ -79,6 +79,7 @@ def submit():
 @app.route('/verify/<unique_key>')
 def verify(unique_key):
     print("UNIQUE KEY: " + unique_key)
+    global current_db_items
     if unique_key in current_db_items:
         database.reference('/users/'+unique_key).update({"emailVerified": "true"})
         return "Successfully verified email! You can now safely close this page."
@@ -92,6 +93,8 @@ def uploadSurveyContent(vals):
         user_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))
     path = '/users/' + user_key
     ref_path = database.reference(path)
+    global current_db_items
+    global current_db_emails
     current_db_items[user_key] = vals['email']
     current_db_emails[vals['email']] = user_key
     for i in vals:
@@ -132,6 +135,7 @@ def validateForm():
 
     if not re.search(regex_email, request.form['email']):
         return -1, "Invalid email format"
+    global current_db_emails
     if request.form['email'] in current_db_emails:
         return -1, "That email has already been used in submitting a form."
     return 0, "Valid form"
