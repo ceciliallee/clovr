@@ -105,10 +105,12 @@ def uploadSurveyContent(vals):
     global current_db_emails
     current_db_items[user_key] = vals['email']
     current_db_emails[vals['email']] = user_key
-    database.reference("/emails/"+vals['email']).update(user_key)
+    database.reference("/emails/"+vals['email'].lower().replace('.','1')).update(user_key)
     for i in vals:
         value = vals[i]
         key = i
+        if key == 'email':
+            value = value.lower()
         ref_path.update({key : value})
     ref_path.update({"emailVerified": "false"})
     msg = Message("Welcome to Clovr!", sender=os.environ["EMAIL"], recipients=[vals['email']])
@@ -145,7 +147,8 @@ def validateForm():
     if not re.search(regex_email, request.form['email']):
         return -1, "Invalid email format"
     global current_db_emails
-    if request.form['email'] in current_db_emails or request.form['email'] in database.reference('/emails').get(shallow=True):
+    converted_email = request.form['email'].lower().replace('.','1')
+    if converted_email in current_db_emails or converted_email in database.reference('/emails').get(shallow=True):
         return -1, "That email has already been used in submitting a form."
     return 0, "Valid form"
 
