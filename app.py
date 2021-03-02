@@ -18,7 +18,7 @@ regex_email = "^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.](\w+[.]?)\w+$"
 from collections import defaultdict
 form = defaultdict(list)
 form["singles"] = ["first", "last", "email", "major", "linkedin", "instagram"]
-form["gender"] = ["man", "woman", "nonbinary"]
+form["gender"] = ["man", "woman", "nonbinary", "noanswer"]
 form["year"] = ["freshman", "sophomore", "junior", "senior"]
 form["csinterest[]"] = ["ai", "arc", "bio", "cpsda", "dbms", "educ", "gr", "hci", "osnt", "ps", "sci", "sec"]
 form["hobbies[]"] = ["art", "fitness", "outdoor", "lit", "bgames", "vgames", "music", "bandorch", "sports", "netflix", "digitalart", "tiktok", "activism", "movies", "content", "coding", "writing", "fashion"]
