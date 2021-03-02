@@ -9,14 +9,19 @@ body {
     margin-top: 5px;
     font-size: 10px;
     color: #707070;
+    align-items: center;
 }
 
 .acm img {
-    width: 50px;
+    width: 45px;
+}
+
+.acm p {
+    margin-left: 10px;
 }
 
 @media (max-width: 950px) { 
     body {
-        height: 100vh;
+        height: 120vh;
     }
 }
