@@ -73,7 +73,7 @@ def submit():
             vals['csinterest'] = list(set(request.form.getlist('csinterest[]')))
             vals['hobbies'] = list(set(request.form.getlist('hobbies[]')))
             uploadSurveyContent(vals)
-            return 'Success!\nPlease check your email (might need to check your junk email as well) to verify your email.'
+            return 'Success!\nPlease check your email (might need to check your junk email as well) to verify your email.\nIf you do not verify your email, you will not get a match on the day of the event.'
         else:
             return message
 @app.route('/verify/<unique_key>')
@@ -81,8 +81,11 @@ def verify(unique_key):
     #print("UNIQUE KEY: " + unique_key)
     global current_db_items
     if unique_key in current_db_items or unique_key in database.reference('/users').get(shallow=True):
-        database.reference('/users/'+unique_key).update({"emailVerified": "true"})
-        return "Successfully verified email! You can now safely close this page."
+        if database.reference('/users/'+unique_key).get()['emailVerified'] == 'true':
+            database.reference('/users/'+unique_key).update({"emailVerified": "true"})
+            return "Successfully verified email! You can now safely close this page."
+        else:
+            return "You have already verified your email. No further actions need to be taken on your part."
     else:
         return "No user found to verify with that key. Please make sure your key is correct."
 #Takes in a dictionary for vals
