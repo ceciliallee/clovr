@@ -88,12 +88,12 @@ def verify(unique_key):
 #Takes in a dictionary for vals
 def uploadSurveyContent(vals):
     user_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))
+    global current_db_items
     #Collision key detection
     while user_key in current_db_items:
         user_key = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))
     path = '/users/' + user_key
     ref_path = database.reference(path)
-    global current_db_items
     global current_db_emails
     current_db_items[user_key] = vals['email']
     current_db_emails[vals['email']] = user_key
