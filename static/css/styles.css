@@ -231,6 +231,16 @@ h1 {
     color: white;
   }
 
+  .darkgreen {
+    color: #0d2c0e;
+    text-decoration: none;
+  }
+
+  .green {
+    color: #355836;
+    text-decoration: none;
+  }
+
   form, .card {
     border-radius: 10px;
     background-color: #DCF2E4;

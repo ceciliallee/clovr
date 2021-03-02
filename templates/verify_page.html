@@ -7,15 +7,11 @@
 <body>
     {% include "nav.html" %}
     <section>
-        <form action="/verify" name = "verification" method="post">
-            <div class="form-comp">
-                <p>Please enter the access code that was included in your email.</p>
-                <input required name="access" type="text" placeholder="Access code">
-            </div>
+        <form action="/verify" name="verification" method="post">
+            <p class="darkgreen">Please enter the access code that was included in your email.</p>
+            <input required name="access" type="text" placeholder="Access code">
             <div>
-
-                  <input class="submit-button" type="submit" value="SUBMIT">
-
+                <input class="submit-button" type="submit" value="SUBMIT">
             </div>
         </form>
     </section>
